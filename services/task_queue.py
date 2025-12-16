@@ -15,4 +15,4 @@ class TaskService:
         return task
 
     def get_tasks(self) -> List[Task]:
-        return self.db.query(Task).all()
+        return self.db.query(Task).order_by(Task.created_at.desc()).all()
